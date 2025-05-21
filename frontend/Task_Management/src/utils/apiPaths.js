@@ -34,9 +34,18 @@ export const API_PATHS = {
 
     },
 
+
     IMAGE:{
         UPLOAD_IMAGE:"/api/auth/upload-image",
 
+    },
+
+    MEETINGS: {
+        SCHEDULE: "/api/meetings/schedule",
+        GET_ALL: "/api/meetings",
+        GET_USER_MEETINGS: "/api/meetings/user",
+        GET_BY_ID: (meetingId) => `/api/meetings/${meetingId}`,
+        DELETE: (meetingId) => `/api/meetings/${meetingId}`,
     },
 
 };

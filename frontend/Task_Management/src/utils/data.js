@@ -4,6 +4,8 @@ import {
     LuClipboardCheck,
     LuSquarePlus,
     LuLogOut,
+    LuVideo,
+    LuBot,
 } from 'react-icons/lu';
 
 export const SIDE_MENU_DATA = [
@@ -33,10 +35,22 @@ export const SIDE_MENU_DATA = [
         path:"/admin/users",
     },
     {
+        id:"06",
+        label:"Meet",
+        icon:LuVideo,
+        path:"/admin/meeting",
+    },
+    {
         id:"05",
         label:"Logout",
         icon:LuLogOut,
         path:"logout",
+    },
+     {
+        id:"07",
+        label:"Chat",
+        icon:LuBot,
+        path:"/admin/chat",
     },
 ];
 
@@ -53,6 +67,18 @@ export const SIDE_MENU_USER_DATA = [
         icon:LuClipboardCheck,
         path:"/user/tasks",
     }, 
+     {
+        id:"03",
+        label:"Meet",
+        icon:LuVideo,
+        path:"/user/meeting",
+    },
+    {
+        id:"04",
+        label:"Chat",
+        icon:LuBot,
+        path:"/user/chat",
+    },
     {
         id:"05",
         label:"Logout",

@@ -5,6 +5,7 @@ import {
   Route,
   Outlet,
   Navigate,
+  useParams,
 } from "react-router-dom";
 import Login from './pages/Auth/Login';
 import SignUp from './pages/Auth/SignUp';
@@ -19,6 +20,14 @@ import UserDashboard from './pages/User/UserDashboard';
 import ViewTaskDetails from './pages/User/ViewTaskDetails';
 import UserProvider, { UserContext } from './context/userContext';
 import { Toaster } from 'react-hot-toast';
+import AdminMeet from './pages/AdminMeet';
+import UserMeet from './pages/UserMeet';
+//import chatbot from './components/chatbot';
+import VideoRoomWrapper from "./components/VideoRoomWrapper";
+import AdminChat from './components/Chatbot/AdminChat';
+import Userchat from './components/Chatbot/Userchat';
+
+
 const App = () => {
   return (
   <UserProvider>
@@ -34,7 +43,10 @@ const App = () => {
             <Route path='/admin/dashboard' element={<Dashboard />} />
             <Route path='/admin/tasks' element={<ManageTasks />} />
             <Route path='/admin/create-task' element={<CreateTask />} />
-            <Route path='/admin/users' element={<ManageUsers />} />          
+            <Route path='/admin/users' element={<ManageUsers />} />  
+            <Route path='/admin/meeting' element={<AdminMeet />} />  
+            <Route path="/video/:roomId" element={<VideoRoomWrapper />} />
+            <Route path="/admin/chat" element={<AdminChat />} />
           </Route>
 
 
@@ -44,6 +56,8 @@ const App = () => {
             <Route path='/user/dashboard' element={<UserDashboard />} />
             <Route path='/user/tasks' element={<MyTasks />} />
             <Route path='/user/task-details/:id' element={<ViewTaskDetails />} />
+            <Route path='/user/meeting' element={<UserMeet />} /> 
+              <Route path="/user/chat" element={<Userchat />} />
           
             
                    
@@ -74,4 +88,3 @@ const Root = () => {
   }
   return user.role === "admin" ? <Navigate to="/admin/dashboard" /> : <Navigate to="/user/dashboard" />;
 };
-
